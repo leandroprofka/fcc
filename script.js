@@ -71,6 +71,65 @@ if (true) {
 
 console.log(blockVar); // this will throw an error, however, if it was a VAR variable, it could be accessed
 
+
+let greeting = "hello";
+let firstTwo = greeting[0] + greeting[1];
+console.log(firstTwo);
+
+let poem =
+  "Roses are red,\nViolets are blue,\nJavaScript is fun,\nAnd so are you.";
+console.log(poem);
+
+let statement = 'She said, "Hello!"';
+console.log(statement);
+
+let quote = "It's a beautiful day!";
+console.log(quote);
+
+let firstName = "Alice";
+let greeting = `Hello, ${firstName}`;
+console.log(greeting);
+
+let poem = `Roses are red,
+Violets are blue,
+JavaScript is fun,
+And so are you.`;
+
+console.log(poem);
+
+let sentence = "JavaScript is awesome!";
+let position = sentence.indexOf("awesome!");
+console.log(position); // 14
+
+
+let maskEmailTest = "user@gmail.com";
+
+let findUser = maskEmailTest.indexOf("@");
+console.log(maskEmailTest.slice(0, 4));
+
+function maskEmail(email) {
+  let findUser = email.indexOf("@");
+  let username = email.substring(0, findUser);
+
+  let maskedUsername =
+    username[0] +
+    "*".repeat(username.length - 2) +
+    username[username.length - 1];
+
+  let domain = email.substring(findUser);
+  return maskedUsername + domain;
+}
+
+let email = "testemail@gmail.com";
+console.log(maskEmail(email));
 */
 
-function addTwoAndSeven() {}
+let userName = prompt("What is your name?", "Guest");
+console.log(userName);
+
+let age = prompt("How old are you?");
+if (age !== null) {
+  console.log("You are " + age + " years old.");
+} else {
+  console.log("User canceled the prompt.");
+}
