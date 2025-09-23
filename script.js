@@ -122,7 +122,6 @@ function maskEmail(email) {
 
 let email = "testemail@gmail.com";
 console.log(maskEmail(email));
-*/
 
 let userName = prompt("What is your name?", "Guest");
 console.log(userName);
@@ -133,3 +132,79 @@ if (age !== null) {
 } else {
   console.log("User canceled the prompt.");
 }
+
+const minIncomeForDuplex = 60000;
+const minCreditScoreForDuplex = 700;
+
+const minIncomeForCondo = 45000;
+const minCreditScoreForCondo = 680;
+
+const minIncomeForCar = 30000;
+const minCreditScoreForCar = 650;
+
+function getLoanMessage(annualIncome, creditScore) {
+  if (
+    creditScore >= minCreditScoreForDuplex &&
+    annualIncome >= minIncomeForDuplex
+  ) {
+    return "You qualify for a duplex, condo, and car loan.";
+  } else if (
+    annualIncome >= minIncomeForCondo &&
+    creditScore >= minCreditScoreForCondo
+  ) {
+    return "You qualify for a condo and car loan.";
+  } else if (
+    annualIncome >= minIncomeForCar &&
+    creditScore >= minCreditScoreForCar
+  ) {
+    return "You qualify for a car loan.";
+  } else {
+    return "You don't qualify for any loans.";
+  }
+}
+
+let duplexLoanMsg = getLoanMessage(85000, 850);
+let condoLoanMsg = getLoanMessage(65000, 690);
+let carLoanMsg = getLoanMessage(45000, 660);
+let noLoanMsg = getLoanMessage(25000, 550);
+
+console.log(duplexLoanMsg);
+console.log(condoLoanMsg);
+console.log(carLoanMsg);
+console.log(noLoanMsg);
+
+
+function convertCtoF(cels) {
+  return cels * (9 / 5) + 32;
+}
+
+console.log(convertCtoF(-30));
+
+let count = 0;
+
+function cc(card) {
+  if (card >= 2 && card <= 6) {
+    count += 1;
+  } else if (card >= 7 && card <= 9) {
+    count += 0;
+  } else if (
+    card === 10 ||
+    card === "J" ||
+    card === "Q" ||
+    card === "K" ||
+    card === "A"
+  ) {
+    count -= 1;
+  }
+
+  if (count > 0) {
+    return `${count} Bet`;
+  } else {
+    return `${count} Hold`;
+  }
+}
+
+cc(8);
+cc(4);
+console.log(cc(7));
+*/
