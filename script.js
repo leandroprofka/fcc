@@ -207,4 +207,50 @@ function cc(card) {
 cc(8);
 cc(4);
 console.log(cc(7));
+
+function isLeapYear(year) {
+  if (!Number.isInteger(year / 4)) {
+    return `${year} is not a leap year.`;
+  }
+
+  if (Number.isInteger(year / 100)) {
+    if (Number.isInteger(year / 400)) {
+      return `${year} is a leap year.`;
+    } else {
+      return `${year} is not a leap year.`;
+    }
+  } else {
+    return `${year} is a leap year.`;
+  }
+}
+
+let year = 2024;
+let result = isLeapYear(year);
+console.log(result);
+
+
+function truncateString(a, b) {
+  if (a.length > b) {
+    return a.substring(0, b) + "...";
+  }
+  return a;
+}
+
+let ta = "violin";
+let tb = 3;
+
+console.log(truncateString(ta, tb));
+
 */
+
+function confirmEnding(astr, bstr) {
+  let getLength = bstr.length;
+  let getEnding = astr.slice(-getLength);
+  if (getEnding === bstr) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(confirmEnding("Bastian", "an"));
